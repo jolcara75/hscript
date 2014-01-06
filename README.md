@@ -1,6 +1,6 @@
-# hscript: Hola Unblocker Script
-A scripting language for configuring the [Hola Unblocker VPN](https://hola.org) that lets you:  
-* Unblock sites by creating a script for configuring routing rules (hscript) for use with the Hola Unblocker VPN  
+# hscript: Hola Routing Scripts
+A scripting language for configuring the [Hola VPN](https://hola.org) that lets you:  
+* Enable access to sites by creating a script for configuring routing rules (hscript) for use with the Hola VPN  
 * Create an hscript package by including several rules within one hscript  
 * Easily share your hscript by posting a simple URL on your site, Facebook, Twitter, email, etc.  
 * Edit and update your hscripts. Anyone using the script will receive the updates automatically!  
@@ -70,9 +70,8 @@ We recommend using **FireBug** or **Chrome Developer Tools** to assist in rule d
     }
   }
 ```
-> This Facebook.com hscript instructs Hola Unblocker requests to route through PROXY US agents on the Hola network  
-(e.g. allows Iranian residents to freely use Facebook on Android). Note that routing all traffic through the Hola
-proxies is required for such a case, but should not be used in cases where not needed since this significantly slows down the browsing.
+> This Facebook.com hscript instructs Hola to route data through PROXY US agents on the Hola network  
+(e.g. allows residents of an oppressive regime to freely use Facebook on Android). Note that routing all traffic through the Hola proxies is required for such a case, but should not be used in cases where not needed since this significantly slows down the browsing.
 
 ## API explained:
 * `name` *optional string*: **name of the hscript package**  
@@ -90,11 +89,11 @@ proxies is required for such a case, but should not be used in cases where not n
   * One hscript package can have multiple rules/sites. User can enable each site independently.  
   * You can now add spaces in the rule ID  
   Examples:  
-  * `unblocker_rules.facebook` for unblocking facebook.com  
-  * `unblocker_rules.wiki website` for unblocking wikipedia.com  
-  * `unblocker_rules.google from us` for unblocking google.com via the US  
+  * `unblocker_rules.facebook` for accessing facebook.com  
+  * `unblocker_rules.wiki website` for accessing wikipedia.com  
+  * `unblocker_rules.google from us` for accessing google.com via the US  
 * `unblocker_rules.RULE1.description` *optional string*: **Description of the rule**   
-* `unblocker_rules.RULE1.link` *optional string*: **URL of the site this rule Unblocks**   
+* `unblocker_rules.RULE1.link` *optional string*: **URL of the site this rule allows access to**   
 * `unblocker_rules.RULE1.icon` *optional string*: **Image URL of the rule/site**  
 * `unblocker_rules.RULE1.root_url` *required array of strings*: **Array of URLs that identify the root site**  
   * Each URL can be an exact site or a URL pattern matching.  
@@ -188,7 +187,7 @@ proxies is required for such a case, but should not be used in cases where not n
   `"PROXY DK"`, `"PROXY IN"`, `"PROXY EG"`, `"PROXY CH"`, `"PROXY BR"`, `"PROXY TR"`  
 
 ### Script debug
-* This feature is only available for the Hola client for Windows (not the Hola Unblocker browser extensions for Chrome & Firefox).
+* This feature is only available for the Hola client for Windows (not the Hola browser extensions for Chrome & Firefox).
 * To enter debug mode click "Developer mode" then "Create new script". To disable debug mode click "Simple mode".
 * In debug mode, Hola will add 'X-Hola-Unblocker-Debug' response header to any http request (you can view all network traffic using Chrome Developer Tools and selecting the network tab).
 * X-Hola-Unblocker-Debug syntax:
@@ -230,12 +229,12 @@ as the fast path matching of hosts is more accurate and we don't waste time on s
 Creating new hscripts is easy!  
 
 1. Get started by finding a script with functionality similar to what you need to use as a template:  
-  * From existing hscripts: from the [Unblocker settings page](https://client.hola.org/client_cgi/),
+  * From existing hscripts: from the [Hola settings page](https://client.hola.org/client_cgi/),
     press 'Create a new rule (power users)' and then 'View script...' on any of the site buttons
     that are similar to what you want to accomplish
   * or from similar scripts on the web: Search for "hscript" + site name
   * or from one of the examples on this Github page
-  * or start with a new rule template: From the [Unblocker settings page](https://client.hola.org/client_cgi/),
+  * or start with a new rule template: From the [Hola settings page](https://client.hola.org/client_cgi/),
     press 'Create a new rule (power users)' then 'Create new script'
 2. Modify the template: Use the API reference on this page to modify the template to your needs
 3. Share your hscript:
@@ -276,9 +275,9 @@ Example:
   }
 ```
 
-## Installing Hola Unblocker
+## Installing Hola
 [Hola](https://hola.org) is available for Windows/Android/Chrome/Firefox.  
-Linux/Mac/Chrome OS is supported by the Hola Unblocker extension for Chrome and Firefox browsers.  
+Linux/Mac/Chrome OS is supported by the Hola extension for Chrome and Firefox browsers.  
 
 ## Sharing hscripts
 
@@ -292,7 +291,7 @@ Linux/Mac/Chrome OS is supported by the Hola Unblocker extension for Chrome and 
     https://hola.org/unblocker?hscript=sid&enable=site1+site2&sites=sites1+sites2
     * hscript: the hscript id of the hscript you want to share
     * enable: optional, list of rules that will be enabled by default upon hscript import
-    * sites: optional, list of domains that the hscript Unblocks
+    * sites: optional, list of domains that the hscript is applicable for
 
 ## Publicizing your hscripts
 
@@ -303,16 +302,16 @@ If you don't already have a Github account, [open one](http://github.com) (it's 
 You can use it as a base for your own rules, and then create your own hscripts projects which can be forked and shared.
 
 ## Become a Country maintainer
-Hola creates the generic VPN technology, but you can make Hola Unblocker more powerful for other Hola users.
-How? Start a website, blog or social media page to collect, create and share Unblocker hscripts, so that other users can easily add more sites and web apps to their Hola Unblocker.
+Hola creates the generic VPN technology, but you can make Hola more powerful for other Hola users.
+How? Start a website, blog or social media page to collect, create and share Hola hscripts, so that other users can easily access more sites and apps with Hola.
 
 Get started by forking this Github project and reading the API documention. Then, start creating your own hscripts, copying other scripts into your project (start by pulling the fork requests we 
 receive from other users) and publishing both the hscript json code and hscipt links.
 
 hscript feature highlights:
-* hscript packages: one link lets users add a collection of sites to unblock
+* hscript packages: one link lets users add a collection of hscript rules
 * Editing scripts: it's easy, and users automatically receive your updates
-* Android: include a link to download the APK file for Android apps you unblock
+* Android: include a link to download the APK file for Android apps your hscript is written for
 
 ## Help us translate Hola!
 Improve a translation or add a translation to another language through one of this sites:
