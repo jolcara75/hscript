@@ -55,7 +55,7 @@ We recommend using **FireBug** or **Chrome Developer Tools** to assist in rule d
     "icon": "http://john-doe-blog.com/img/logo.png",
     "unblocker_rules": {
       "facebook": {
-        "description": "Unblock Facebook app",
+        "description": "Access Facebook app",
         "link": "facebook.com",
         "root_url": ["**.facebook.com"],
         "icon": "http://icongal.com/gallery/image/11148/facebook.png",
@@ -83,8 +83,8 @@ We recommend using **FireBug** or **Chrome Developer Tools** to assist in rule d
 * `icon` *optional string*: **Author's Image URL**  
   Image that represents the author, package, etc: `john-doe-blog.com/john.png`   
   Currently not displayed.  
-* `unblocker_rules` *required map*: **Routing rules for the sites to Unblock**  
-* `unblocker_rules.RULE1` *required map*: **Unblocker rule/site ID**  
+* `unblocker_rules` *required map*: **Routing rules for the sites to access**  
+* `unblocker_rules.RULE1` *required map*: **Access rule/site ID**  
   Replace `RULE1` with the rule ID.  
   * One hscript package can have multiple rules/sites. User can enable each site independently.  
   * You can now add spaces in the rule ID  
