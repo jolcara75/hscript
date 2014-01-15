@@ -133,7 +133,7 @@ We recommend using **FireBug** or **Chrome Developer Tools** to assist in rule d
   Examples:
   *  "108.175.32.0/24" -> 108.175.32.0 - 108.175.32.255 [see ip range calculator](http://www.csgnetwork.com/ipinfocalc.html)  
   *  "108.175.32.123' === '108.175.32.123/32"
-* `unblocker_rules.RULE1.cmds[].if[]` *optional array*: **`if` can accept rules from either of 3 host sources, URL and ext.**  
+* `unblocker_rules.RULE1.cmds[].if[]` *optional array*: **conditional filter for `cmds[]` by host sources, URL, ext.**  
 * `unblocker_rules.RULE1.cmds[].if[].host` *optional array of strings*: **Hosts to be included in the routing**  
   e.g. `"if": [{"host": "^subdomain.\*\\.domain\\.com$", "type": "=~", "then": "DIRECT"}]`  
 * `unblocker_rules.RULE1.cmds[].if[].url` *optional array of strings*: **URLs to be included in the routing**  
