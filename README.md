@@ -173,9 +173,7 @@ We recommend using **FireBug** or **Chrome Developer Tools** to assist in rule d
   * `"PROXY SG"` Route through Singapore  
   * `"PROXY HK"` Route through Hong Kong  
   <a href="https://github.com/hola/hscript/blob/master/README.md#become-a-country-maintainer">Become a Country maintainer</a>  
-  We'll be adding more countries soon!
-  <a href="mailto:api@hola.org?Subject=Request%20to%20add%20a%20new%20hscript%20region">
-  Send a request to add a new country</a>  
+  All countries are now supported by the API!
 * `unblocker_rules.RULE1.cmds[].if[].dst_dns` *optional string*: **Destination DNS resolution**  
   **ONLY** use when DNS resolution is needed and all traffic must go through the proxy, as this will
   have extremely slow page loads!  
