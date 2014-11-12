@@ -267,7 +267,8 @@ Example:
         "cmds": [{
           "hosts": [
             "aloha.viber.com", "secure.viber.com", "share.viber.com",
-	          "download.viber.com", "54.225.248.0/24"
+	          "download.viber.com", "54.225.248.0/24"]
+        }]
       }
     }
   }
